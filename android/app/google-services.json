@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "487194774735",
+    "project_id": "chat-app-9f8b2",
+    "storage_bucket": "chat-app-9f8b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487194774735:android:038ef77bf3611f78107bba",
+        "android_client_info": {
+          "package_name": "com.yuri.social_media_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487194774735-vm8fccjlu8ab3uj29lo6jvbm9vdab2mn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCXzBFMWdJoJlK1MmWsWvZoJsBTFyG0MY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487194774735-vm8fccjlu8ab3uj29lo6jvbm9vdab2mn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "487194774735-fnpi9p19fs269908a1r1rhhq1c0vqatk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.yuri.social-media-app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

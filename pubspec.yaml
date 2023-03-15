@@ -7,13 +7,24 @@ environment:
   sdk: ">=2.19.0 <3.0.0"
 
 dependencies:
+  app_ui:
+    path: packages/app_ui
   bloc: ^8.1.1
+  equatable: ^2.0.5
+  firebase_authentication_client:
+    path: packages/authentication_client/firebase_authentication_client
+  firebase_core: ^2.7.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_localizations:
     sdk: flutter
+  form_inputs:
+    path: packages/form_inputs
+  go_router: ^6.2.0
   intl: ^0.17.0
+  user_repository:
+    path: packages/user_repository
 
 dev_dependencies:
   bloc_test: ^9.1.1

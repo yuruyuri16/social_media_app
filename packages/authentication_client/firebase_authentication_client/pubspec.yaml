@@ -1,0 +1,17 @@
+name: firebase_authentication_client
+description: A Very Good Project created by Very Good CLI.
+publish_to: none
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  authentication_client:
+    path: ../authentication_client
+  firebase_auth: ^4.2.10
+  google_sign_in: ^6.0.2
+
+dev_dependencies:
+  mocktail: ^0.3.0
+  test: ^1.19.2
+  very_good_analysis: ^4.0.0
