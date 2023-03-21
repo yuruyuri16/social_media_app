@@ -42,7 +42,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     AppLogoutRequested event,
     Emitter<AppState> emit,
   ) async {
-    await _userRepository.logInWithEmailAndPassword(email: '', password: '');
+    unawaited(_userRepository.logOut());
   }
 
   @override

@@ -1,31 +1,70 @@
-import 'package:authentication_client/authentication_client.dart';
+import 'package:equatable/equatable.dart';
 
 /// {@template user}
 /// User model represents the current user with subscription plan.
 /// {@endtemplate}
-class User extends AuthenticationUser {
+class User extends Equatable {
   /// {@macro user}
   const User({
-    required super.id,
-    super.email,
-    super.name,
-    super.photo,
+    required this.id,
+    required this.name,
+    required this.lastName,
+    required this.email,
+    required this.username,
+    required this.photoUrl,
   });
 
-  /// Converts [AuthenticationUser] to [User].
-  factory User.fromAuthenticationUser({
-    required AuthenticationUser authenticationUser,
-  }) =>
-      User(
-        email: authenticationUser.email,
-        id: authenticationUser.id,
-        name: authenticationUser.name,
-        photo: authenticationUser.photo,
+  /// {@macro user}
+  factory User.fromJson(Map<String, dynamic> json) => User(
+        id: json['id'] as String,
+        name: json['name'] as String,
+        lastName: json['lastName'] as String,
+        email: json['email'] as String,
+        username: json['username'] as String,
+        photoUrl: json['photoUrl'] as String,
       );
 
-  @override
+  ///
+  final String id;
+
+  ///
+  final String name;
+
+  ///
+  final String lastName;
+
+  ///
+  final String email;
+
+  ///
+  final String username;
+
+  ///
+  final String photoUrl;
+
+  ///
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'name': name,
+        'lastName': lastName,
+        'email': email,
+        'username': username,
+        'photoUrl': photoUrl,
+      };
+
+  ///
   bool get isAnonymous => this == anonymous;
 
-  /// Anonymous user which represents an unauthenticated user.
-  static const User anonymous = User(id: '');
+  ///
+  static const anonymous = User(
+    id: '',
+    name: '',
+    lastName: '',
+    email: '',
+    username: '',
+    photoUrl: '',
+  );
+
+  @override
+  List<Object> get props => [id, name, lastName, email, username, photoUrl];
 }

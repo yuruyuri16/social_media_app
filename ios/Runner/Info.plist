@@ -52,5 +52,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Social Media app uses access to your camera roll to do things like help you share photos and videos to Social Media app.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Social Media app uses your device's camera to help you take photos.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Social Media app uses your device's microphone to help you record videos.</string>
 </dict>
 </plist>

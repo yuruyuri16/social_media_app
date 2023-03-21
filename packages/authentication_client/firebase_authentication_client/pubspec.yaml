@@ -8,8 +8,7 @@ environment:
 dependencies:
   authentication_client:
     path: ../authentication_client
-  firebase_auth: ^4.2.10
-  google_sign_in: ^6.0.2
+  firebase_auth: ^4.3.0
 
 dev_dependencies:
   mocktail: ^0.3.0

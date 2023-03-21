@@ -1,0 +1,17 @@
+name: firebase_user_client
+description: A Very Good Project created by Very Good CLI.
+publish_to: none
+
+environment:
+  sdk: ">=2.19.0 <3.0.0"
+
+dependencies:
+  cloud_firestore: ^4.4.5
+  firebase_storage: ^11.0.16
+  user_client:
+    path: ../user_client
+
+dev_dependencies:
+  mocktail: ^0.3.0
+  test: ^1.22.0
+  very_good_analysis: ^4.0.0

@@ -49,7 +49,7 @@ class _AppViewState extends State<AppView> {
   @override
   void initState() {
     super.initState();
-    router = AppRouter.router;
+    router = AppRouter.router(context.read<AppBloc>());
   }
 
   @override

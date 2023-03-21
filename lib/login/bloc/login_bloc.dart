@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:firebase_authentication_client/firebase_authentication_client.dart';
 import 'package:form_inputs/form_inputs.dart';
 import 'package:user_repository/user_repository.dart';
 
@@ -12,7 +11,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     on<LoginEmailChanged>(_onEmailChanged);
     on<LoginPasswordChanged>(_onPasswordChanged);
     on<LoginEmailAndPasswordSubmitted>(_onEmailAndPasswordSubmitted);
-    on<LoginGoogleSubmitted>(_onGoogleSubmitted);
   }
 
   final UserRepository _userRepository;
@@ -36,28 +34,15 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginEmailAndPasswordSubmitted event,
     Emitter<LoginState> emit,
   ) async {
+    if (!state.valid) return;
+
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await _userRepository.logInWithEmailAndPassword(
-        email: state.email.value,
-        password: state.password.value,
+      await _userRepository.logIn(
+        email: state.email.value.trim(),
+        password: state.password.value.trim(),
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));
-    } catch (error, stackTrace) {
-      emit(state.copyWith(status: FormzSubmissionStatus.failure));
-      addError(error, stackTrace);
-    }
-  }
-
-  Future<void> _onGoogleSubmitted(
-    LoginGoogleSubmitted event,
-    Emitter<LoginState> emit,
-  ) async {
-    try {
-      await _userRepository.logInWithGoogle();
-      emit(state.copyWith(status: FormzSubmissionStatus.success));
-    } on LogInWithGoogleCanceled {
-      emit(state.copyWith(status: FormzSubmissionStatus.canceled));
     } catch (error, stackTrace) {
       emit(state.copyWith(status: FormzSubmissionStatus.failure));
       addError(error, stackTrace);
