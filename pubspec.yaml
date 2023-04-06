@@ -23,7 +23,7 @@ dependencies:
     sdk: flutter
   form_inputs:
     path: packages/form_inputs
-  go_router: ^6.4.0
+  go_router: ^6.5.5
   image_picker: ^0.8.7
   intl: ^0.17.0
   secure_storage:
