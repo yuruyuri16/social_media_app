@@ -13,7 +13,7 @@ dependencies:
   equatable: ^2.0.5
   firebase_authentication_client:
     path: packages/authentication_client/firebase_authentication_client
-  firebase_core: ^2.8.0
+  firebase_core: ^2.12.0
   firebase_user_client:
     path: packages/user_client/firebase_user_client
   flutter:
