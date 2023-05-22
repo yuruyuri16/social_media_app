@@ -9,7 +9,7 @@ environment:
 dependencies:
   app_ui:
     path: packages/app_ui
-  bloc: ^8.1.1
+  bloc: ^8.1.2
   equatable: ^2.0.5
   firebase_authentication_client:
     path: packages/authentication_client/firebase_authentication_client
